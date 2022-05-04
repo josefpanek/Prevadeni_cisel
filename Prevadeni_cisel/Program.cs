@@ -17,22 +17,19 @@ namespace Prevadeni_cisel
             string obracenyVysledek = "";
 
             Console.WriteLine("Číslo v desítkové soustavě: ");
-            while (!int.TryParse("6378"/*Console.ReadLine()*/, out cisloVstup))
+            while (!int.TryParse(Console.ReadLine(), out cisloVstup))
                 Console.WriteLine("Neplatné číslo, zadejte prosím znovu: ");
 
             int mezivysledek = cisloVstup;
 
             Console.WriteLine("Číselná soustava (2-16): ");
-            while (!int.TryParse("8"/*Console.ReadLine()*/, out soustava))
+            while (!int.TryParse(Console.ReadLine(), out soustava))
                 Console.WriteLine("Neplatné číslo, zadejte prosím znovu: ");
 
             while (mezivysledek != 0)
             {
                 obracenyVysledek += znaky[mezivysledek % soustava];
                 mezivysledek /= soustava;
-                
-                Console.Write(mezivysledek +"\t");
-                Console.WriteLine(mezivysledek % soustava);
             }
 
             for (int i = 0; i < obracenyVysledek.Length; i++)
